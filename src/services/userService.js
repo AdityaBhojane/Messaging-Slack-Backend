@@ -15,7 +15,7 @@ export const signUpService = async (data) => {
     if (error.name === 'ValidationError') {
       throw new ValidationError(
         {
-          error: error.errors
+          error: error.errors,
         },
         error.message
       );

@@ -30,9 +30,10 @@ export const isAuthenticated = async (req, res, next) => {
         })
       );
     }
-
+    
     const user = await userRepository.getById(response.id);
     req.user = user.id;
+    console.log(response, user._id)
     next();
   } catch (error) {
     console.log('Auth middleware error', error);

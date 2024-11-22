@@ -9,6 +9,7 @@ const userRepository = {
     return user;
   },
 
+  
   getByUsername: async function (username) {
     const user = await User.findOne({ username }).select('-password'); // exclude password
     return user;
